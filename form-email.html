@@ -6,9 +6,20 @@
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
 <style>
+  #header-sticky,
+#header,
+.fusion-header-wrapper,
+.fusion-footer-widget-area,
+.fusion-footer-copyright-area,
+#footer {
+  display: none !important;
+}
+.fusion-tb-header {
+  display: none !important;
+}
   body .em-page-wrapper,
   .em-page-wrapper {
     background-color: #E6F3FB;
@@ -26,12 +37,21 @@
     flex-direction: column !important;
     gap: 28px;
     align-items: stretch;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lexend', sans-serif;
   }
+
+  .clearfix {
+    background-color: #E6F3FB !important;
+
+} 
+.width-100 {
+    background-color: #E6F3FB !important;
+
+}
 
   .em-hero-image {
     display: block;
-    max-width: 200px;
+    max-width: 220px;
     width: 100%;
     height: auto;
     margin: 0 auto 32px;
@@ -40,18 +60,19 @@
 
   .em-hero h1 {
     font-size: 26px;
-    font-weight: 700;
+    font-weight: 600;
     color: #424851;
     line-height: 1.25;
     margin: 0 0 14px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
   }
 
   .em-hero .em-hero-intro {
     font-size: 16px;
-    color: #525252;
+    color: #404650;
     margin: 0 0 20px;
     line-height: 1.55;
+    font-weight: 300;
   }
 
   .em-hero-benefits {
@@ -62,18 +83,19 @@
 
   .em-hero-benefits li {
     font-size: 14px;
-    color: #424851;
+    color: #404650;
     padding: 8px 0;
     display: flex;
     align-items: flex-start;
     gap: 10px;
     line-height: 1.4;
+    font-weight: 300;
   }
 
   .em-hero-benefits li::before {
     content: "✓";
-    color: #0698d6;
-    font-weight: 700;
+    color: #0e6ace;
+    font-weight: 600;
     flex-shrink: 0;
     font-size: 16px;
   }
@@ -87,13 +109,13 @@
 
   body .em-page-wrapper .marketing-form-wrapper,
   .em-page-wrapper .marketing-form-wrapper {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lexend', sans-serif;
     width: 100%;
     margin: 0;
     background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(26, 74, 141, 0.12), 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 8px 32px rgba(17, 68, 140, 0.12), 0 2px 8px rgba(0,0,0,0.04);
     position: relative;
     z-index: 9999;
     order: 2;
@@ -104,7 +126,7 @@
   }
 
   .marketing-form-header {
-    background: linear-gradient(135deg, #1a4a8d 0%, #0d3566 100%);
+    background: linear-gradient(135deg, #11448C 0%, #0a2f63 100%);
     padding: 24px 20px;
     color: white;
   }
@@ -112,7 +134,7 @@
   .marketing-form-header h2 {
     margin: 0;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     color: white !important;
     letter-spacing: -0.3px;
   }
@@ -121,6 +143,7 @@
     margin: 6px 0 0;
     font-size: 13px;
     color: rgba(255,255,255,0.9);
+    font-weight: 300;
   }
 
   .marketing-form-body {
@@ -130,10 +153,10 @@
 
   .marketing-form-wrapper label:not(.likert-scale-option) {
     display: block;
-    color: #555 !important;
+    color: #404650 !important;
     font-size: 14px;
     margin-bottom: 6px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
   }
 
@@ -146,11 +169,12 @@
     padding: 6px 12px !important;
     margin-bottom: 10px !important;
     border-radius: 10px !important;
-    border: 1px solid #c8daea !important;
+    border: 1px solid #c0d4ec !important;
     font-size: 16px !important;
-    background-color: #f7fbff !important;
-    color: #333 !important;
-    font-family: 'Poppins', sans-serif !important;
+    background-color: #f4f8fd !important;
+    color: #404650 !important;
+    font-family: 'Lexend', sans-serif !important;
+    font-weight: 300 !important;
     box-sizing: border-box !important;
     display: block !important;
     transition: border-color 0.2s, box-shadow 0.2s !important;
@@ -161,6 +185,7 @@
   .marketing-form-wrapper textarea {
     height: auto !important;
     min-height: 52px !important;
+    line-height: 1.25 !important;
     resize: vertical;
   }
 
@@ -171,10 +196,10 @@
   .marketing-form-wrapper input:focus,
   .marketing-form-wrapper textarea:focus,
   .marketing-form-wrapper select:focus {
-    border-color: #0698d6 !important;
+    border-color: #0e6ace !important;
     outline: none !important;
     background-color: #ffffff !important;
-    box-shadow: 0 0 0 3px rgba(6, 152, 214, 0.2) !important;
+    box-shadow: 0 0 0 3px rgba(14, 106, 206, 0.2) !important;
   }
 
   body .em-page-wrapper .form-row-double,
@@ -190,7 +215,7 @@
   }
 
   .form-radio-separator {
-    border-top: 1px dotted #c8daea;
+    border-top: 1px dotted #c0d4ec;
     margin: 16px 0;
   }
 
@@ -200,8 +225,8 @@
 
   .likert-scale-question {
     font-size: 14px;
-    color: #555 !important;
-    font-weight: 500;
+    color: #404650 !important;
+    font-weight: 400;
     margin-bottom: 12px;
     line-height: 1.4;
   }
@@ -216,18 +241,18 @@
     display: flex;
     justify-content: space-between;
     gap: 4px;
-    background: #f0f5fa;
+    background: #ddeef8;
     padding: 8px 6px;
     border-radius: 8px 8px 0 0;
-    border: 1px solid #c8daea;
+    border: 1px solid #c0d4ec;
     border-bottom: none;
   }
 
   .likert-scale-labels span {
     flex: 1;
     font-size: 10px;
-    color: #555;
-    font-weight: 600;
+    color: #404650;
+    font-weight: 400;
     text-align: center;
     line-height: 1.2;
   }
@@ -238,7 +263,7 @@
     gap: 4px;
     padding: 10px 6px;
     background: #f7fbff;
-    border: 1px solid #c8daea;
+    border: 1px solid #c0d4ec;
     border-radius: 0 0 8px 8px;
   }
 
@@ -264,20 +289,27 @@
   }
 
   .likert-scale-oval {
-    width: 14px;
-    height: 14px;
-    min-width: 14px;
-    min-height: 14px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     border-radius: 50%;
-    border: 1px solid #c8daea;
+    border: 2px solid #a0bcd4;
     background: #fff;
     flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+  }
+
+  .likert-scale-option:hover .likert-scale-oval {
+    border-color: #0e6ace;
+    box-shadow: 0 0 0 3px rgba(14, 106, 206, 0.15);
   }
 
   .likert-scale-option:has(input:checked) .likert-scale-oval {
-    background: #0698d6;
-    border-color: #0698d6;
+    background: #0e6ace;
+    border-color: #0e6ace;
+    box-shadow: 0 0 0 3px rgba(14, 106, 206, 0.2), inset 0 0 0 4px #fff;
   }
 
   .marketing-form-wrapper button[type="submit"],
@@ -292,12 +324,12 @@
     border: none;
     border-radius: 50px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    font-family: 'Lexend', sans-serif;
     margin-top: 8px;
     box-shadow: 0 4px 16px rgba(6, 152, 214, 0.35);
   }
@@ -362,6 +394,94 @@
     min-height: 400px;
   }
 
+
+  /* Anti-theme override: enforce SSK-equivalent rhythm */
+  body .em-page-wrapper .marketing-form-wrapper,
+  .em-page-wrapper .marketing-form-wrapper {
+    font-family: 'Lexend', sans-serif !important;
+  }
+
+  body .em-page-wrapper .marketing-form-header,
+  .em-page-wrapper .marketing-form-header {
+    padding: 24px 20px !important;
+    line-height: 1.2 !important;
+  }
+
+  body .em-page-wrapper .marketing-form-header h2,
+  .em-page-wrapper .marketing-form-header h2 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  body .em-page-wrapper .marketing-form-header p,
+  .em-page-wrapper .marketing-form-header p {
+    margin: 6px 0 0 !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+  }
+
+  body .em-page-wrapper .marketing-form-wrapper label:not(.likert-scale-option),
+  .em-page-wrapper .marketing-form-wrapper label:not(.likert-scale-option) {
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+  }
+
+  body .em-page-wrapper .marketing-form-wrapper input,
+  body .em-page-wrapper .marketing-form-wrapper select,
+  body .em-page-wrapper .marketing-form-wrapper textarea,
+  .em-page-wrapper .marketing-form-wrapper input,
+  .em-page-wrapper .marketing-form-wrapper select,
+  .em-page-wrapper .marketing-form-wrapper textarea {
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+    margin-bottom: 10px !important;
+    font-size: 16px !important;
+    font-weight: 300 !important;
+    line-height: 1.25 !important;
+    box-sizing: border-box !important;
+  }
+
+  body .em-page-wrapper .marketing-form-wrapper textarea,
+  .em-page-wrapper .marketing-form-wrapper textarea {
+    min-height: 52px !important;
+    line-height: 1.25 !important;
+  }
+
+  body .em-page-wrapper .em-hero h1,
+  .em-page-wrapper .em-hero h1 {
+    color: #424851 !important;
+  }
+
+  body .em-page-wrapper .marketing-form-wrapper button[type="submit"],
+  body .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
+  body .em-page-wrapper .marketing-form-wrapper input[type="submit"],
+  .em-page-wrapper .marketing-form-wrapper button[type="submit"],
+  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
+  .em-page-wrapper .marketing-form-wrapper input[type="submit"] {
+    background: #0698d6 !important;
+    min-height: 52px !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin-top: 8px !important;
+  }
+
+  body .em-page-wrapper .marketing-form-wrapper button[type="submit"]:hover,
+  body .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
+  body .em-page-wrapper .marketing-form-wrapper input[type="submit"]:hover,
+  .em-page-wrapper .marketing-form-wrapper button[type="submit"]:hover,
+  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
+  .em-page-wrapper .marketing-form-wrapper input[type="submit"]:hover {
+    background: #0698d6 !important;
+  }
+
   /* ── DESKTOP ── */
   @media (min-width: 1025px) {
     body .em-page-wrapper .em-page-hero,
@@ -406,11 +526,10 @@
       max-width: 480px;
       order: unset;
       border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(26, 74, 141, 0.18);
+      box-shadow: 0 20px 50px rgba(17, 68, 140, 0.18);
     }
 
     .marketing-form-header {
-      background-color: #1a4a8d;
       padding: 20px 30px;
     }
 
@@ -426,11 +545,13 @@
       padding: 6px 10px !important;
       margin-bottom: 12px !important;
       font-size: 15px !important;
+      line-height: 1.25 !important;
     }
 
     .marketing-form-wrapper textarea {
       height: auto !important;
       min-height: unset !important;
+      line-height: 1.25 !important;
     }
 
     body .em-page-wrapper .form-row-double,
@@ -453,7 +574,7 @@
     .marketing-form-wrapper button[type="submit"]:hover,
     .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
     .marketing-form-wrapper input[type="submit"]:hover {
-      background-color: #1a4a8d;
+      background-color: #0698d6;
     }
 
     .form-security-note {
@@ -512,10 +633,11 @@
         <form id="sfForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D3h000000Dpfa" method="POST" target="sfSubmitFrame">
           <input type="hidden" name="oid" value="00D3h000000Dpfa">
           <input type="hidden" name="retURL" value="http://">
+          <input type="hidden" name="recordType" value="012TR000004Ipb3YAA">
           <input type="hidden" name="lead_source" value="Email Marketing">
           <input type="hidden" name="utm_source" value="email_marketing">
           <input type="hidden" name="utm_medium" value="email">
-          <input type="hidden" name="form_source" value="From Email Marketing">
+          <input type="hidden" name="Form_Source__c" value="SKT Email Marketing">
 
           <div class="form-row-double">
             <div class="field-group">
@@ -549,8 +671,8 @@
             <option value="Google Search">Google Search</option>
             <option value="Salesforce App Exchange">Salesforce App Exchange</option>
             <option value="Salesforce Trade Show">Salesforce Trade Show</option>
-            <option value="Salesforcec Dreamin">Salesforcec Dreamin</option>
-            <option value="Salesforec Apps">Salesforec Apps</option>
+            <option value="Salesforce Dreamin'">Salesforce Dreamin'</option>
+            <option value="Salesforce Apps">Salesforce Apps</option>
             <option value="Word of Mouth">Word of Mouth</option>
             <option value="Other">Other</option>
           </select>
@@ -613,10 +735,10 @@
 <!-- MODAL CALENDLY -->
 <div id="calendlyModalEM" class="calendly-modal">
   <div class="calendly-modal-content">
-    <div class="calendly-modal-header" style="background-color:#1a4a8d; padding:20px 30px; color:white; position:relative; text-align:center;">
+    <div class="calendly-modal-header" style="background: linear-gradient(135deg, #11448C 0%, #0a2f63 100%); padding:20px 30px; color:white; position:relative; text-align:center;">
       <button class="calendly-modal-close-em" type="button" style="position:absolute; top:15px; right:15px; background:transparent; border:none; font-size:30px; color:white; cursor:pointer;">&times;</button>
-      <h3 style="margin:0; color:white; font-weight:700;">Schedule your demo</h3>
-      <p style="margin:4px 0 0; color:rgba(255,255,255,0.8); font-size:13px;">
+      <h3 style="margin:0; color:white; font-weight:600; font-family:'Lexend',sans-serif;">Schedule your demo</h3>
+      <p style="margin:4px 0 0; color:rgba(255,255,255,0.8); font-size:13px; font-family:'Lexend',sans-serif; font-weight:300;">
         Pick a date and time that works best for you
       </p>
     </div>

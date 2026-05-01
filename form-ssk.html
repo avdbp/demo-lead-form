@@ -20,16 +20,16 @@
 .fusion-tb-header {
   display: none !important;
 }
-  body .em-page-wrapper,
-  .em-page-wrapper {
+  body .ssk-page-wrapper,
+  .ssk-page-wrapper {
     background-color: #E6F3FB;
     min-height: 100vh;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     -webkit-tap-highlight-color: transparent;
   }
 
-  body .em-page-wrapper .em-page-hero,
-  .em-page-wrapper .em-page-hero {
+  body .ssk-page-wrapper .ssk-page-hero,
+  .ssk-page-wrapper .ssk-page-hero {
     max-width: 1100px;
     margin: 0 auto;
     padding: 24px 20px 40px;
@@ -49,7 +49,7 @@
 
 }
 
-  .em-hero-image {
+  .ssk-hero-image {
     display: block;
     max-width: 220px;
     width: 100%;
@@ -58,16 +58,16 @@
     object-fit: contain;
   }
 
-  .em-hero h1 {
+  .ssk-hero h1 {
     font-size: 26px;
     font-weight: 600;
-    color: #424851;
+    color: #11448C;
     line-height: 1.25;
     margin: 0 0 14px;
     letter-spacing: -0.3px;
   }
 
-  .em-hero .em-hero-intro {
+  .ssk-hero .ssk-hero-intro {
     font-size: 16px;
     color: #404650;
     margin: 0 0 20px;
@@ -75,13 +75,13 @@
     font-weight: 300;
   }
 
-  .em-hero-benefits {
+  .ssk-hero-benefits {
     list-style: none;
     padding: 0;
     margin: 0 0 20px;
   }
 
-  .em-hero-benefits li {
+  .ssk-hero-benefits li {
     font-size: 14px;
     color: #404650;
     padding: 8px 0;
@@ -92,7 +92,7 @@
     font-weight: 300;
   }
 
-  .em-hero-benefits li::before {
+  .ssk-hero-benefits li::before {
     content: "✓";
     color: #0e6ace;
     font-weight: 600;
@@ -100,15 +100,15 @@
     font-size: 16px;
   }
 
-  .em-hero-trust {
+  .ssk-hero-trust {
     font-size: 12px;
     color: #888;
     margin: 0;
     line-height: 1.5;
   }
 
-  body .em-page-wrapper .marketing-form-wrapper,
-  .em-page-wrapper .marketing-form-wrapper {
+  body .ssk-page-wrapper .ssk-form-wrapper,
+  .ssk-page-wrapper .ssk-form-wrapper {
     font-family: 'Lexend', sans-serif;
     width: 100%;
     margin: 0;
@@ -121,17 +121,17 @@
     order: 2;
   }
 
-  .em-hero {
+  .ssk-hero {
     order: 1;
   }
 
-  .marketing-form-header {
+  .ssk-form-header {
     background: linear-gradient(135deg, #11448C 0%, #0a2f63 100%);
     padding: 24px 20px;
     color: white;
   }
 
-  .marketing-form-header h2 {
+  .ssk-form-header h2 {
     margin: 0;
     font-size: 20px;
     font-weight: 600;
@@ -139,19 +139,19 @@
     letter-spacing: -0.3px;
   }
 
-  .marketing-form-header p {
+  .ssk-form-header p {
     margin: 6px 0 0;
     font-size: 13px;
     color: rgba(255,255,255,0.9);
     font-weight: 300;
   }
 
-  .marketing-form-body {
+  .ssk-form-body {
     padding: 24px 20px 28px;
     background-color: #ffffff;
   }
 
-  .marketing-form-wrapper label:not(.likert-scale-option) {
+  .ssk-form-wrapper label:not(.likert-scale-option) {
     display: block;
     color: #404650 !important;
     font-size: 14px;
@@ -160,9 +160,9 @@
     text-align: left;
   }
 
-  .marketing-form-wrapper input,
-  .marketing-form-wrapper textarea,
-  .marketing-form-wrapper select {
+  .ssk-form-wrapper input,
+  .ssk-form-wrapper textarea,
+  .ssk-form-wrapper select {
     width: 100% !important;
     height: auto !important;
     min-height: 36px !important;
@@ -182,28 +182,28 @@
     appearance: none;
   }
 
-  .marketing-form-wrapper textarea {
+  .ssk-form-wrapper textarea {
     height: auto !important;
     min-height: 52px !important;
     line-height: 1.25 !important;
     resize: vertical;
   }
 
-  .marketing-form-wrapper select {
+  .ssk-form-wrapper select {
     cursor: pointer;
   }
 
-  .marketing-form-wrapper input:focus,
-  .marketing-form-wrapper textarea:focus,
-  .marketing-form-wrapper select:focus {
+  .ssk-form-wrapper input:focus,
+  .ssk-form-wrapper textarea:focus,
+  .ssk-form-wrapper select:focus {
     border-color: #0e6ace !important;
     outline: none !important;
     background-color: #ffffff !important;
     box-shadow: 0 0 0 3px rgba(14, 106, 206, 0.2) !important;
   }
 
-  body .em-page-wrapper .form-row-double,
-  .em-page-wrapper .form-row-double {
+  body .ssk-page-wrapper .form-row-double,
+  .ssk-page-wrapper .form-row-double {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 0;
@@ -312,14 +312,12 @@
     box-shadow: 0 0 0 3px rgba(14, 106, 206, 0.2), inset 0 0 0 4px #fff;
   }
 
-  .marketing-form-wrapper button[type="submit"],
-  .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
-  .marketing-form-wrapper input[type="submit"] {
+  .ssk-form-wrapper button[type="button"]#sskSubmitBtn {
     width: 100%;
     min-height: 52px;
     padding: 16px 24px;
     touch-action: manipulation;
-    background: #0698d6;
+    background: #11448C;
     color: white;
     border: none;
     border-radius: 50px;
@@ -331,12 +329,10 @@
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     font-family: 'Lexend', sans-serif;
     margin-top: 8px;
-    box-shadow: 0 4px 16px rgba(6, 152, 214, 0.35);
+    box-shadow: 0 4px 16px rgba(17, 68, 140, 0.35);
   }
 
-  .marketing-form-wrapper button[type="submit"]:active,
-  .marketing-form-wrapper button[type="button"]#sfSubmitBtn:active,
-  .marketing-form-wrapper input[type="submit"]:active {
+  .ssk-form-wrapper button[type="button"]#sskSubmitBtn:active {
     transform: scale(0.98);
   }
 
@@ -348,7 +344,7 @@
     line-height: 1.5;
   }
 
-  .calendly-modal {
+  .ssk-calendly-modal {
     display: none;
     position: fixed;
     inset: 0;
@@ -362,7 +358,7 @@
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 
-  .calendly-modal-content {
+  .ssk-calendly-modal-content {
     background: #fff;
     width: 100%;
     height: 100%;
@@ -376,11 +372,11 @@
     flex-direction: column;
   }
 
-  .calendly-modal-header {
+  .ssk-calendly-modal-header {
     flex-shrink: 0;
   }
 
-  .calendly-modal-body {
+  .ssk-calendly-modal-body {
     padding: 0;
     flex: 1;
     min-height: 0;
@@ -389,103 +385,15 @@
     flex-direction: column;
   }
 
-  #calendlyInlineEM {
+  #sskCalendlyInline {
     flex: 1;
     min-height: 400px;
   }
 
-
-  /* Anti-theme override: enforce SSK-equivalent rhythm */
-  body .em-page-wrapper .marketing-form-wrapper,
-  .em-page-wrapper .marketing-form-wrapper {
-    font-family: 'Lexend', sans-serif !important;
-  }
-
-  body .em-page-wrapper .marketing-form-header,
-  .em-page-wrapper .marketing-form-header {
-    padding: 24px 20px !important;
-    line-height: 1.2 !important;
-  }
-
-  body .em-page-wrapper .marketing-form-header h2,
-  .em-page-wrapper .marketing-form-header h2 {
-    margin: 0 !important;
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    letter-spacing: -0.3px !important;
-  }
-
-  body .em-page-wrapper .marketing-form-header p,
-  .em-page-wrapper .marketing-form-header p {
-    margin: 6px 0 0 !important;
-    font-size: 13px !important;
-    font-weight: 300 !important;
-    line-height: 1.3 !important;
-  }
-
-  body .em-page-wrapper .marketing-form-wrapper label:not(.likert-scale-option),
-  .em-page-wrapper .marketing-form-wrapper label:not(.likert-scale-option) {
-    margin-bottom: 6px !important;
-    font-size: 14px !important;
-    font-weight: 400 !important;
-    line-height: 1.25 !important;
-  }
-
-  body .em-page-wrapper .marketing-form-wrapper input,
-  body .em-page-wrapper .marketing-form-wrapper select,
-  body .em-page-wrapper .marketing-form-wrapper textarea,
-  .em-page-wrapper .marketing-form-wrapper input,
-  .em-page-wrapper .marketing-form-wrapper select,
-  .em-page-wrapper .marketing-form-wrapper textarea {
-    min-height: 36px !important;
-    padding: 6px 12px !important;
-    margin-bottom: 10px !important;
-    font-size: 16px !important;
-    font-weight: 300 !important;
-    line-height: 1.25 !important;
-    box-sizing: border-box !important;
-  }
-
-  body .em-page-wrapper .marketing-form-wrapper textarea,
-  .em-page-wrapper .marketing-form-wrapper textarea {
-    min-height: 52px !important;
-    line-height: 1.25 !important;
-  }
-
-  body .em-page-wrapper .em-hero h1,
-  .em-page-wrapper .em-hero h1 {
-    color: #424851 !important;
-  }
-
-  body .em-page-wrapper .marketing-form-wrapper button[type="submit"],
-  body .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
-  body .em-page-wrapper .marketing-form-wrapper input[type="submit"],
-  .em-page-wrapper .marketing-form-wrapper button[type="submit"],
-  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
-  .em-page-wrapper .marketing-form-wrapper input[type="submit"] {
-    background: #0698d6 !important;
-    min-height: 52px !important;
-    padding: 16px 24px !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    line-height: 1.2 !important;
-    margin-top: 8px !important;
-  }
-
-  body .em-page-wrapper .marketing-form-wrapper button[type="submit"]:hover,
-  body .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
-  body .em-page-wrapper .marketing-form-wrapper input[type="submit"]:hover,
-  .em-page-wrapper .marketing-form-wrapper button[type="submit"]:hover,
-  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
-  .em-page-wrapper .marketing-form-wrapper input[type="submit"]:hover {
-    background: #0698d6 !important;
-  }
-
   /* ── DESKTOP ── */
   @media (min-width: 1025px) {
-    body .em-page-wrapper .em-page-hero,
-    .em-page-wrapper .em-page-hero {
+    body .ssk-page-wrapper .ssk-page-hero,
+    .ssk-page-wrapper .ssk-page-hero {
       padding: 50px 30px;
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
@@ -493,88 +401,82 @@
       align-items: center;
     }
 
-    .em-hero {
+    .ssk-hero {
       order: unset;
     }
 
-    .em-hero-image {
+    .ssk-hero-image {
       max-width: 320px;
       margin: 0 0 20px;
     }
 
-    .em-hero h1 {
+    .ssk-hero h1 {
       font-size: 38px;
       margin: 0 0 18px;
     }
 
-    .em-hero .em-hero-intro {
+    .ssk-hero .ssk-hero-intro {
       font-size: 17px;
       margin: 18px 0;
     }
 
-    .em-hero-benefits li {
+    .ssk-hero-benefits li {
       font-size: 15px;
       padding: 5px 0;
     }
 
-    .em-hero-trust {
+    .ssk-hero-trust {
       font-size: 13px;
       margin-top: 20px;
     }
 
-    .marketing-form-wrapper {
+    .ssk-form-wrapper {
       max-width: 480px;
       order: unset;
       border-radius: 12px;
       box-shadow: 0 20px 50px rgba(17, 68, 140, 0.18);
     }
 
-    .marketing-form-header {
+    .ssk-form-header {
       padding: 20px 30px;
     }
 
-    .marketing-form-body {
+    .ssk-form-body {
       padding: 28px 30px;
     }
 
-    .marketing-form-wrapper input,
-    .marketing-form-wrapper textarea,
-    .marketing-form-wrapper select {
+    .ssk-form-wrapper input,
+    .ssk-form-wrapper textarea,
+    .ssk-form-wrapper select {
       height: auto !important;
       min-height: unset !important;
       padding: 6px 10px !important;
       margin-bottom: 12px !important;
       font-size: 15px !important;
-      line-height: 1.25 !important;
     }
 
-    .marketing-form-wrapper textarea {
+    .ssk-form-wrapper textarea {
       height: auto !important;
       min-height: unset !important;
       line-height: 1.25 !important;
     }
 
-    body .em-page-wrapper .form-row-double,
-    .em-page-wrapper .form-row-double {
+    body .ssk-page-wrapper .form-row-double,
+    .ssk-page-wrapper .form-row-double {
       grid-template-columns: 1fr 1fr !important;
       gap: 12px;
     }
 
-    .marketing-form-wrapper button[type="submit"],
-    .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
-    .marketing-form-wrapper input[type="submit"] {
+    .ssk-form-wrapper button[type="button"]#sskSubmitBtn {
       min-height: unset;
       padding: 15px;
       font-size: 17px;
-      background-color: #0698d6;
       box-shadow: none;
       margin-top: 0;
     }
 
-    .marketing-form-wrapper button[type="submit"]:hover,
-    .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
-    .marketing-form-wrapper input[type="submit"]:hover {
-      background-color: #0698d6;
+    .ssk-form-wrapper button[type="button"]#sskSubmitBtn:hover {
+      background-color: #0e6ace;
     }
 
     .form-security-note {
@@ -597,7 +499,7 @@
       font-size: 11px;
     }
 
-    .calendly-modal-content {
+    .ssk-calendly-modal-content {
       width: 95%;
       max-height: 90vh;
       border-radius: 12px;
@@ -606,38 +508,38 @@
   }
 </style>
 
-<div class="em-page-wrapper">
-  <div class="em-page-hero">
-    <div class="em-hero">
-      <img class="em-hero-image" src="https://scorekeepertech.com/wp-content/uploads/2026/03/IMG-FORM.png" alt="">
+<div class="ssk-page-wrapper">
+  <div class="ssk-page-hero">
+    <div class="ssk-hero">
+      <img class="ssk-hero-image" src="https://salesscorekeeper.com/wp-content/uploads/2024/09/SSK_LogoNew.png" alt="SalesScoreKeeper">
       <h1>Just a Few Questions Before We Meet</h1>
-      <p class="em-hero-intro">
+      <p class="ssk-hero-intro">
         Before scheduling your demo, we'd love to learn a little
         about you and your team. This helps us tailor the session
         to what matters most to you.
       </p>
-      <ul class="em-hero-benefits">
+      <ul class="ssk-hero-benefits">
         <li>Takes less than a minute to complete</li>
         <li>Helps us prepare a more relevant demo for your team</li>
         <li>Once completed, you'll pick a date and time that works for you</li>
       </ul>
-      <p class="em-hero-trust">🔒 Your information is 100% secure and will never be shared.</p>
+      <p class="ssk-hero-trust">🔒 Your information is 100% secure and will never be shared.</p>
     </div>
 
-    <div class="marketing-form-wrapper">
-      <div class="marketing-form-header">
+    <div class="ssk-form-wrapper">
+      <div class="ssk-form-header">
         <h2>Book Your Demo</h2>
         <p>Fill out the form and pick a time to meet.</p>
       </div>
-      <div class="marketing-form-body">
-        <form id="sfForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D3h000000Dpfa" method="POST" target="sfSubmitFrame">
+      <div class="ssk-form-body">
+        <form id="sskForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D3h000000Dpfa" method="POST" target="sskSubmitFrame">
           <input type="hidden" name="oid" value="00D3h000000Dpfa">
           <input type="hidden" name="retURL" value="http://">
-          <input type="hidden" name="recordType" value="012TR000004Ipb3YAA">
-          <input type="hidden" name="lead_source" value="LinkedIn">
-          <input type="hidden" name="utm_source" value="linkedin">
-          <input type="hidden" name="utm_medium" value="social">
-          <input type="hidden" name="Form_Source__c" value="SKT LinkedIn">
+          <input type="hidden" name="recordType" value="012TR0000065WWsYAM">
+          <input type="hidden" name="lead_source" value="Website">
+          <input type="hidden" name="utm_source" value="website">
+          <input type="hidden" name="utm_medium" value="web_form">
+          <input type="hidden" name="Form_Source__c" value="SSK Website">
 
           <div class="form-row-double">
             <div class="field-group">
@@ -721,29 +623,29 @@
             </div>
           </div>
           <div class="form-radio-separator"></div>
-          <button type="button" id="sfSubmitBtn">SCHEDULE MY DEMO →</button>
+          <button type="button" id="sskSubmitBtn">SCHEDULE MY DEMO →</button>
           <p class="form-security-note">
             🔒 Your information is 100% secure and will never be shared.
           </p>
         </form>
-        <iframe name="sfSubmitFrame" style="display:none;" title="sf"></iframe>
+        <iframe name="sskSubmitFrame" style="display:none;" title="sf"></iframe>
       </div>
     </div>
   </div>
 </div>
 
 <!-- MODAL CALENDLY -->
-<div id="calendlyModalEM" class="calendly-modal">
-  <div class="calendly-modal-content">
-    <div class="calendly-modal-header" style="background: linear-gradient(135deg, #11448C 0%, #0a2f63 100%); padding:20px 30px; color:white; position:relative; text-align:center;">
-      <button class="calendly-modal-close-em" type="button" style="position:absolute; top:15px; right:15px; background:transparent; border:none; font-size:30px; color:white; cursor:pointer;">&times;</button>
+<div id="sskCalendlyModal" class="ssk-calendly-modal">
+  <div class="ssk-calendly-modal-content">
+    <div class="ssk-calendly-modal-header" style="background: linear-gradient(135deg, #11448C 0%, #0a2f63 100%); padding:20px 30px; color:white; position:relative; text-align:center;">
+      <button class="ssk-calendly-modal-close" type="button" style="position:absolute; top:15px; right:15px; background:transparent; border:none; font-size:30px; color:white; cursor:pointer;">&times;</button>
       <h3 style="margin:0; color:white; font-weight:600; font-family:'Lexend',sans-serif;">Schedule your demo</h3>
       <p style="margin:4px 0 0; color:rgba(255,255,255,0.8); font-size:13px; font-family:'Lexend',sans-serif; font-weight:300;">
         Pick a date and time that works best for you
       </p>
     </div>
-    <div class="calendly-modal-body">
-      <div id="calendlyInlineEM"></div>
+    <div class="ssk-calendly-modal-body">
+      <div id="sskCalendlyInline"></div>
     </div>
   </div>
 </div>
@@ -774,12 +676,12 @@ if (!document.querySelector('script[src*="calendly"]')) {
 
 <script>
 (function() {
-  function initSfCalendly() {
-    var form = document.getElementById("sfForm");
-    var btn = document.getElementById("sfSubmitBtn");
-    var calendlyModal = document.getElementById("calendlyModalEM");
-    var calendlyClose = document.querySelector(".calendly-modal-close-em");
-    var calendlyInline = document.getElementById("calendlyInlineEM");
+  function initSskCalendly() {
+    var form = document.getElementById("sskForm");
+    var btn = document.getElementById("sskSubmitBtn");
+    var calendlyModal = document.getElementById("sskCalendlyModal");
+    var calendlyClose = document.querySelector(".ssk-calendly-modal-close");
+    var calendlyInline = document.getElementById("sskCalendlyInline");
 
     if (!form || !btn || !calendlyModal || !calendlyInline) return;
 
@@ -805,8 +707,8 @@ if (!document.querySelector('script[src*="calendly"]')) {
       var fullName = (first_name + " " + last_name).trim();
       var nameWithCompany = company ? fullName + " (" + company + ")" : fullName;
 
-      var calendlyBase = "https://calendly.com/d/cxpc-34x-5zc/scorekeeper-for-salesforce-demo-li";
-      var calendlyUrl = calendlyBase + "?name=" + encodeURIComponent(nameWithCompany) + "&email=" + encodeURIComponent(email) + "&utm_source=linkedin&utm_medium=social";
+      var calendlyBase = "https://calendly.com/d/cxxt-5jb-dnv/salesscorekeeper-demo-w";
+      var calendlyUrl = calendlyBase + "?name=" + encodeURIComponent(nameWithCompany) + "&email=" + encodeURIComponent(email) + "&utm_source=website&utm_medium=web_form";
 
       form.submit();
 
@@ -815,8 +717,7 @@ if (!document.querySelector('script[src*="calendly"]')) {
       calendlyInline.innerHTML = "";
 
       setTimeout(function () {
-        var isCalendlyHost = calendlyUrl.indexOf("calendly.com") !== -1;
-        if (isCalendlyHost && typeof Calendly !== "undefined" && Calendly.initInlineWidget) {
+        if (typeof Calendly !== "undefined" && Calendly.initInlineWidget) {
           Calendly.initInlineWidget({
             url: calendlyUrl,
             parentElement: calendlyInline,
@@ -825,7 +726,7 @@ if (!document.querySelector('script[src*="calendly"]')) {
               email: email,
               customAnswers: { a1: prepNotes || "" }
             },
-            utm: { utmSource: "linkedin", utmMedium: "social" }
+            utm: { utmSource: "website", utmMedium: "web_form" }
           });
         } else {
           calendlyInline.innerHTML = '<iframe src="' + calendlyUrl + '" frameborder="0" style="width:100%;height:100%;min-height:400px;border:none;"></iframe>';
@@ -841,9 +742,9 @@ if (!document.querySelector('script[src*="calendly"]')) {
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSfCalendly);
+    document.addEventListener("DOMContentLoaded", initSskCalendly);
   } else {
-    initSfCalendly();
+    initSskCalendly();
   }
 })();
 </script>

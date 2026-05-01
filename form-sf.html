@@ -161,6 +161,7 @@
   .marketing-form-wrapper textarea {
     height: auto !important;
     min-height: 52px !important;
+    line-height: 1.25 !important;
     resize: vertical;
   }
 
@@ -216,7 +217,7 @@
     display: flex;
     justify-content: space-between;
     gap: 4px;
-    background: #f0f5fa;
+    background: #ddeef8;
     padding: 8px 6px;
     border-radius: 8px 8px 0 0;
     border: 1px solid #c8daea;
@@ -264,20 +265,27 @@
   }
 
   .likert-scale-oval {
-    width: 14px;
-    height: 14px;
-    min-width: 14px;
-    min-height: 14px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     border-radius: 50%;
-    border: 1px solid #c8daea;
+    border: 2px solid #a0bcd4;
     background: #fff;
     flex-shrink: 0;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.06);
+  }
+
+  .likert-scale-option:hover .likert-scale-oval {
+    border-color: #0698d6;
+    box-shadow: 0 0 0 3px rgba(6, 152, 214, 0.15);
   }
 
   .likert-scale-option:has(input:checked) .likert-scale-oval {
     background: #0698d6;
     border-color: #0698d6;
+    box-shadow: 0 0 0 3px rgba(6, 152, 214, 0.2), inset 0 0 0 4px #fff;
   }
 
   .marketing-form-wrapper button[type="submit"],
@@ -431,6 +439,7 @@
     .marketing-form-wrapper textarea {
       height: auto !important;
       min-height: unset !important;
+      line-height: 1.25 !important;
     }
 
     body .em-page-wrapper .form-row-double,
@@ -512,6 +521,7 @@
         <form id="sfForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D3h000000Dpfa" method="POST" target="sfSubmitFrame">
           <input type="hidden" name="oid" value="00D3h000000Dpfa">
           <input type="hidden" name="retURL" value="http://">
+          <input type="hidden" name="recordType" value="012TR000004Ipb3YAA">
           <input type="hidden" name="lead_source" value="LinkedIn">
           <input type="hidden" name="utm_source" value="linkedin">
           <input type="hidden" name="utm_medium" value="social">
@@ -549,8 +559,8 @@
             <option value="Google Search">Google Search</option>
             <option value="Salesforce App Exchange">Salesforce App Exchange</option>
             <option value="Salesforce Trade Show">Salesforce Trade Show</option>
-            <option value="Salesforcec Dreamin">Salesforcec Dreamin</option>
-            <option value="Salesforec Apps">Salesforec Apps</option>
+            <option value="Salesforce Dreamin'">Salesforce Dreamin'</option>
+            <option value="Salesforce Apps">Salesforce Apps</option>
             <option value="Word of Mouth">Word of Mouth</option>
             <option value="Other">Other</option>
           </select>
