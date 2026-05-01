@@ -10,7 +10,7 @@
 
 <style>
   /* Reset total de herencia de WordPress/Avada */
-  html, body { display: block !important; }
+  html, body { display: block !important; max-width: 100vw !important; overflow-x: hidden !important; }
   *, *::before, *::after { box-sizing: border-box !important; }
   .ssk-page-wrapper * { line-height: 1.4 !important; }
 
@@ -42,15 +42,17 @@
   .ssk-page-wrapper {
     background-color: #E6F3FB;
     min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     -webkit-tap-highlight-color: transparent;
   }
 
   body .ssk-page-wrapper .ssk-page-hero,
   .ssk-page-wrapper .ssk-page-hero {
-    max-width: 1100px;
+    max-width: min(1100px, 100vw);
     margin: 0 auto;
-    padding: 24px 20px 40px;
+    padding: 24px 12px 40px;
     display: flex !important;
     flex-direction: column !important;
     gap: 28px;
@@ -271,11 +273,14 @@
 
   .likert-scale-labels span {
     flex: 1;
-    font-size: 10px;
+    font-size: 9px;
     color: #404650;
     font-weight: 400;
     text-align: center;
     line-height: 1.2;
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   .likert-scale-options {
@@ -834,6 +839,24 @@ if (!document.querySelector('script[src*="calendly"]')) {
     '-webkit-appearance': 'none',
     'appearance': 'none'
   };
+
+  function fixAvadaOverflow() {
+    if (window.innerWidth >= 1025) return;
+    var selectors = ['.boxed-wrapper', '.fusion-wrapper', '.wrapper_blank', '#wrapper', '#boxed-wrapper', 'main'];
+    selectors.forEach(function(sel) {
+      document.querySelectorAll(sel).forEach(function(el) {
+        el.style.setProperty('max-width', '100vw', 'important');
+        el.style.setProperty('overflow-x', 'hidden', 'important');
+        el.style.setProperty('width', '100vw', 'important');
+        el.style.setProperty('padding-left', '0', 'important');
+        el.style.setProperty('padding-right', '0', 'important');
+        el.style.setProperty('margin-left', '0', 'important');
+        el.style.setProperty('margin-right', '0', 'important');
+      });
+    });
+  }
+  fixAvadaOverflow();
+  setTimeout(fixAvadaOverflow, 300);
 
   function applyStyles() {
     var heroImg = document.querySelector('.ssk-hero-image');
