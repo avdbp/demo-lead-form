@@ -9,6 +9,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
 <style>
+  /* Reset total de herencia de WordPress/Avada */
+  html, body { display: block !important; }
+  *, *::before, *::after { box-sizing: border-box !important; }
+  .ssk-page-wrapper * { line-height: 1.4 !important; }
+
+  /* Neutralizar CSS variables de Avada dentro del formulario */
+  #ssk-form {
+    --form_bg_color: #f4f8fd;
+    --form_text_color: #404650;
+    --form_text_size: 16px;
+    --form_border_color: #c0d4ec;
+    --form_border_width_top: 1px;
+    --form_border_width_right: 1px;
+    --form_border_width_bottom: 1px;
+    --form_border_width_left: 1px;
+    --form_border_radius: 10px;
+  }
+
   #header-sticky,
 #header,
 .fusion-header-wrapper,
@@ -54,7 +72,7 @@
     max-width: 220px;
     width: 100%;
     height: auto;
-    margin: 0 auto 32px;
+    margin: 0 auto 64px;
     object-fit: contain;
   }
 
@@ -94,7 +112,7 @@
 
   .ssk-hero-benefits li::before {
     content: "✓";
-    color: #0e6ace;
+    color: #11448C;
     font-weight: 600;
     flex-shrink: 0;
     font-size: 16px;
@@ -160,9 +178,10 @@
     text-align: left;
   }
 
-  .ssk-form-wrapper input,
-  .ssk-form-wrapper textarea,
-  .ssk-form-wrapper select {
+  body .ssk-page-wrapper .ssk-form-wrapper input,
+  body .ssk-page-wrapper .ssk-form-wrapper textarea,
+  body .ssk-page-wrapper .ssk-form-wrapper select,
+  #ssk-form input, #ssk-form textarea, #ssk-form select {
     width: 100% !important;
     height: auto !important;
     min-height: 36px !important;
@@ -175,14 +194,16 @@
     color: #404650 !important;
     font-family: 'Lexend', sans-serif !important;
     font-weight: 300 !important;
+    line-height: 1.4 !important;
     box-sizing: border-box !important;
     display: block !important;
     transition: border-color 0.2s, box-shadow 0.2s !important;
-    -webkit-appearance: none;
-    appearance: none;
+    -webkit-appearance: none !important;
+    appearance: none !important;
   }
 
-  .ssk-form-wrapper textarea {
+  body .ssk-page-wrapper .ssk-form-wrapper textarea,
+  #ssk-form textarea {
     height: auto !important;
     min-height: 52px !important;
     line-height: 1.25 !important;
@@ -390,6 +411,48 @@
     min-height: 400px;
   }
 
+  /* Anti-theme override: enforce SSK-equivalent rhythm */
+  .ssk-page-wrapper .ssk-form-wrapper {
+    font-family: 'Lexend', sans-serif !important;
+  }
+
+  .ssk-page-wrapper .ssk-form-header {
+    padding: 24px 20px !important;
+    line-height: 1.2 !important;
+  }
+
+  .ssk-page-wrapper .ssk-form-header h2 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .ssk-page-wrapper .ssk-form-header p {
+    margin: 6px 0 0 !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+  }
+
+  .ssk-page-wrapper .ssk-form-wrapper label:not(.likert-scale-option) {
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+  }
+
+
+  .ssk-page-wrapper .ssk-form-wrapper button[type="button"]#sskSubmitBtn {
+    min-height: 52px !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin-top: 8px !important;
+  }
+
   /* ── DESKTOP ── */
   @media (min-width: 1025px) {
     body .ssk-page-wrapper .ssk-page-hero,
@@ -447,7 +510,8 @@
 
     .ssk-form-wrapper input,
     .ssk-form-wrapper textarea,
-    .ssk-form-wrapper select {
+    .ssk-form-wrapper select,
+    #ssk-form input, #ssk-form textarea, #ssk-form select {
       height: auto !important;
       min-height: unset !important;
       padding: 6px 10px !important;
@@ -526,7 +590,7 @@
       <p class="ssk-hero-trust">🔒 Your information is 100% secure and will never be shared.</p>
     </div>
 
-    <div class="ssk-form-wrapper">
+    <div class="ssk-form-wrapper" id="ssk-form">
       <div class="ssk-form-header">
         <h2>Book Your Demo</h2>
         <p>Fill out the form and pick a time to meet.</p>
@@ -745,6 +809,99 @@ if (!document.querySelector('script[src*="calendly"]')) {
     document.addEventListener("DOMContentLoaded", initSskCalendly);
   } else {
     initSskCalendly();
+  }
+})();
+</script>
+
+<script>
+(function() {
+  var STYLES = {
+    'width': '100%',
+    'height': 'auto',
+    'min-height': '36px',
+    'padding': '6px 12px',
+    'margin-bottom': '10px',
+    'border-radius': '10px',
+    'border': '1px solid #c0d4ec',
+    'font-size': '16px',
+    'background-color': '#f4f8fd',
+    'color': '#404650',
+    'font-family': "'Lexend', sans-serif",
+    'font-weight': '300',
+    'line-height': '1.4',
+    'box-sizing': 'border-box',
+    'display': 'block',
+    '-webkit-appearance': 'none',
+    'appearance': 'none'
+  };
+
+  function applyStyles() {
+    var heroImg = document.querySelector('.ssk-hero-image');
+    if (heroImg) heroImg.style.setProperty('margin-bottom', '64px', 'important');
+
+    var wrapper = document.getElementById('ssk-form');
+    if (!wrapper) return;
+
+    wrapper.style.setProperty('line-height', '1.4', 'important');
+
+    var texts = wrapper.querySelectorAll('label, p, h2, h3, button, .likert-scale-question, .ssk-form-header');
+    texts.forEach(function(el) {
+      el.style.setProperty('line-height', '1.4', 'important');
+    });
+
+    var likertBlocks = wrapper.querySelectorAll('.likert-scale-block');
+    likertBlocks.forEach(function(el) {
+      el.style.setProperty('margin-bottom', '20px', 'important');
+    });
+
+    wrapper.querySelectorAll('.likert-scale-question').forEach(function(el) {
+      el.style.setProperty('margin-bottom', '14px', 'important');
+      el.style.setProperty('margin-top', '0', 'important');
+    });
+
+    var separators = wrapper.querySelectorAll('.form-radio-separator');
+    separators.forEach(function(el) {
+      el.style.setProperty('margin-top', '16px', 'important');
+      el.style.setProperty('margin-bottom', '16px', 'important');
+    });
+
+    var fields = wrapper.querySelectorAll('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]), textarea, select');
+    fields.forEach(function(el) {
+      Object.keys(STYLES).forEach(function(prop) {
+        el.style.setProperty(prop, STYLES[prop], 'important');
+      });
+      if (el.tagName === 'TEXTAREA') {
+        el.style.setProperty('min-height', '52px', 'important');
+        el.style.setProperty('line-height', '1.25', 'important');
+        el.style.setProperty('resize', 'vertical', 'important');
+      }
+    });
+  }
+
+  var observer;
+
+  function applyStylesSafe() {
+    if (observer) observer.disconnect();
+    applyStyles();
+    if (observer) observer.observe(wrapper, { attributes: true, subtree: true, attributeFilter: ['style'] });
+  }
+
+  var wrapper = document.getElementById('ssk-form');
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyStyles);
+  } else {
+    applyStyles();
+  }
+  setTimeout(applyStylesSafe, 500);
+  setTimeout(applyStylesSafe, 1000);
+  setTimeout(applyStylesSafe, 2000);
+
+  if (wrapper) {
+    observer = new MutationObserver(function() {
+      applyStylesSafe();
+    });
+    observer.observe(wrapper, { attributes: true, subtree: true, attributeFilter: ['style'] });
   }
 })();
 </script>

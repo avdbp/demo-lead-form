@@ -9,6 +9,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* Reset total de herencia de WordPress/Avada */
+  html, body { display: block !important; }
+  *, *::before, *::after { box-sizing: border-box !important; }
+  .em-page-wrapper * { line-height: 1.4 !important; }
+
+  /* Neutralizar CSS variables de Avada dentro del formulario */
+  #em-form {
+    --form_bg_color: #f7fbff;
+    --form_text_color: #333;
+    --form_text_size: 16px;
+    --form_border_color: #c8daea;
+    --form_border_width_top: 1px;
+    --form_border_width_right: 1px;
+    --form_border_width_bottom: 1px;
+    --form_border_width_left: 1px;
+    --form_border_radius: 10px;
+  }
+
   body .em-page-wrapper,
   .em-page-wrapper {
     background-color: #E6F3FB;
@@ -137,9 +155,10 @@
     text-align: left;
   }
 
-  .marketing-form-wrapper input,
-  .marketing-form-wrapper textarea,
-  .marketing-form-wrapper select {
+  body .em-page-wrapper .marketing-form-wrapper input,
+  body .em-page-wrapper .marketing-form-wrapper textarea,
+  body .em-page-wrapper .marketing-form-wrapper select,
+  #em-form input, #em-form textarea, #em-form select {
     width: 100% !important;
     height: auto !important;
     min-height: 36px !important;
@@ -151,14 +170,16 @@
     background-color: #f7fbff !important;
     color: #333 !important;
     font-family: 'Poppins', sans-serif !important;
+    line-height: 1.4 !important;
     box-sizing: border-box !important;
     display: block !important;
     transition: border-color 0.2s, box-shadow 0.2s !important;
-    -webkit-appearance: none;
-    appearance: none;
+    -webkit-appearance: none !important;
+    appearance: none !important;
   }
 
-  .marketing-form-wrapper textarea {
+  body .em-page-wrapper .marketing-form-wrapper textarea,
+  #em-form textarea {
     height: auto !important;
     min-height: 52px !important;
     line-height: 1.25 !important;
@@ -370,6 +391,61 @@
     min-height: 400px;
   }
 
+  /* Anti-theme override: enforce SSK-equivalent rhythm */
+  .em-page-wrapper .marketing-form-wrapper {
+    font-family: 'Lexend', sans-serif !important;
+  }
+
+  .em-page-wrapper .marketing-form-header {
+    padding: 24px 20px !important;
+    line-height: 1.2 !important;
+  }
+
+  .em-page-wrapper .marketing-form-header h2 {
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .em-page-wrapper .marketing-form-header p {
+    margin: 6px 0 0 !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+  }
+
+  .em-page-wrapper .marketing-form-wrapper label:not(.likert-scale-option) {
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.25 !important;
+  }
+
+
+  .em-page-wrapper .em-hero h1 {
+    color: #424851 !important;
+  }
+
+  .em-page-wrapper .marketing-form-wrapper button[type="submit"],
+  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn,
+  .em-page-wrapper .marketing-form-wrapper input[type="submit"] {
+    background: #0698d6 !important;
+    min-height: 52px !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    margin-top: 8px !important;
+  }
+
+  .em-page-wrapper .marketing-form-wrapper button[type="submit"]:hover,
+  .em-page-wrapper .marketing-form-wrapper button[type="button"]#sfSubmitBtn:hover,
+  .em-page-wrapper .marketing-form-wrapper input[type="submit"]:hover {
+    background: #0698d6 !important;
+  }
+
   /* ── DESKTOP ── */
   @media (min-width: 1025px) {
     body .em-page-wrapper .em-page-hero,
@@ -428,7 +504,8 @@
 
     .marketing-form-wrapper input,
     .marketing-form-wrapper textarea,
-    .marketing-form-wrapper select {
+    .marketing-form-wrapper select,
+    #em-form input, #em-form textarea, #em-form select {
       height: auto !important;
       min-height: unset !important;
       padding: 6px 10px !important;
@@ -512,7 +589,7 @@
       <p class="em-hero-trust">🔒 Your information is 100% secure and will never be shared.</p>
     </div>
 
-    <div class="marketing-form-wrapper">
+    <div class="marketing-form-wrapper" id="em-form">
       <div class="marketing-form-header">
         <h2>Book Your Demo</h2>
         <p>Fill out the form and pick a time to meet.</p>
@@ -732,5 +809,33 @@ if (!document.querySelector('script[src*="calendly"]')) {
   } else {
     initSfCalendly();
   }
+})();
+</script>
+
+<script>
+(function() {
+  var STYLES = {
+    'width': '100%', 'height': 'auto', 'min-height': '36px',
+    'padding': '6px 12px', 'margin-bottom': '10px', 'border-radius': '10px',
+    'border': '1px solid #c8daea', 'font-size': '16px',
+    'background-color': '#f7fbff', 'color': '#333',
+    'font-family': "'Poppins', sans-serif", 'font-weight': '300',
+    'line-height': '1.4', 'box-sizing': 'border-box', 'display': 'block',
+    '-webkit-appearance': 'none', 'appearance': 'none'
+  };
+  function applyStyles() {
+    var wrapper = document.getElementById('em-form');
+    if (!wrapper) return;
+    wrapper.querySelectorAll('input:not([type="hidden"]):not([type="radio"]):not([type="checkbox"]), textarea, select').forEach(function(el) {
+      Object.keys(STYLES).forEach(function(p) { el.style.setProperty(p, STYLES[p], 'important'); });
+      if (el.tagName === 'TEXTAREA') {
+        el.style.setProperty('min-height', '52px', 'important');
+        el.style.setProperty('line-height', '1.25', 'important');
+        el.style.setProperty('resize', 'vertical', 'important');
+      }
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', applyStyles); } else { applyStyles(); }
+  setTimeout(applyStyles, 500);
 })();
 </script>
