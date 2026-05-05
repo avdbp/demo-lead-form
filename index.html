@@ -575,28 +575,59 @@
       box-shadow: 0 25px 60px rgba(0,0,0,0.4);
     }
   }
+
+  #lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    background: white;
+    border-radius: 50px;
+    padding: 5px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    margin-bottom: 16px;
+    font-family: 'Inter', sans-serif;
+  }
+  .lang-btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #bbb;
+    padding: 0 4px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .lang-btn.active { color: #EF4444; }
+  .lang-divider { font-size: 11px; color: #ddd; }
 </style>
 
 <div class="ssk-page-wrapper">
   <div class="ssk-page-hero">
     <div class="ssk-hero">
       <img class="ssk-hero-image" src="https://res.cloudinary.com/dqph2qm49/image/upload/v1727979507/rocketMedia/logoWeb_hgidsl.png" alt="Rocket Media">
-      <h1>Hablemos de tu negocio</h1>
-      <p class="ssk-hero-intro">
-        Completá el formulario y uno de nuestros especialistas se pondrá en contacto con vos para entender cómo podemos ayudarte a crecer.
+      <div id="lang-switcher">
+        <button id="lang-btn-en" class="lang-btn active" onclick="setLang('en')">EN</button>
+        <span class="lang-divider">|</span>
+        <button id="lang-btn-es" class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+      <h1 data-en="Turn Every Contact Into a Lead" data-es="Convierte cada contacto en un lead">Turn Every Contact Into a Lead</h1>
+      <p class="ssk-hero-intro" data-en="Fill out the form and instantly generate a structured lead card — downloadable as PDF and ready to integrate into your CRM or database." data-es="Llena el formulario y genera al instante una ficha de lead estructurada — descargable en PDF y lista para integrarse a tu CRM o base de datos.">
+        Fill out the form and instantly generate a structured lead card — downloadable as PDF and ready to integrate into your CRM or database.
       </p>
       <ul class="ssk-hero-benefits">
-        <li>Sin compromisos, sin presiones</li>
-        <li>Te contactamos en menos de 24 horas</li>
-        <li>Estrategias personalizadas para tu negocio</li>
+        <li data-en="Captures key contact and business information" data-es="Captura información clave de contacto y negocio">Captures key contact and business information</li>
+        <li data-en="Generates a clean, branded PDF lead card instantly" data-es="Genera una ficha de lead profesional en PDF al instante">Generates a clean, branded PDF lead card instantly</li>
+        <li data-en="Ready to feed your CRM, database, or sales pipeline" data-es="Lista para alimentar tu CRM, base de datos o pipeline de ventas">Ready to feed your CRM, database, or sales pipeline</li>
       </ul>
-      <p class="ssk-hero-trust">🔒 Tu información es 100% segura y nunca será compartida.</p>
+      <p class="ssk-hero-trust" data-en="✦ This is a live demo — submit the form to see your lead card generated in real time." data-es="✦ Esto es un demo en vivo — llena el formulario y ve tu ficha de lead generada en tiempo real.">✦ This is a live demo — submit the form to see your lead card generated in real time.</p>
     </div>
 
     <div class="ssk-form-wrapper" id="ssk-form">
       <div class="ssk-form-header">
-        <h2>Contactanos</h2>
-        <p>Completá el formulario y te escribimos pronto.</p>
+        <h2 data-en="Create Your Lead" data-es="Crea tu Lead">Create Your Lead</h2>
+        <p data-en="Fill in the details below and your lead card will be generated instantly." data-es="Llena los datos y tu ficha de lead se generará al instante.">Fill in the details below and your lead card will be generated instantly.</p>
       </div>
       <div class="ssk-form-body">
         <form id="sskForm" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D3h000000Dpfa" method="POST" target="sskSubmitFrame">
@@ -610,40 +641,40 @@
 
           <div class="form-row-double">
             <div class="field-group">
-              <label for="first_name">First Name</label>
+              <label for="first_name" data-en="First Name" data-es="Nombre">First Name</label>
               <input id="first_name" maxlength="40" name="first_name" type="text" required>
             </div>
             <div class="field-group">
-              <label for="last_name">Last Name</label>
+              <label for="last_name" data-en="Last Name" data-es="Apellido">Last Name</label>
               <input id="last_name" maxlength="80" name="last_name" type="text" required>
             </div>
           </div>
 
-          <label for="title">Title</label>
+          <label for="title" data-en="Title" data-es="Cargo">Title</label>
           <input id="title" maxlength="40" name="title" type="text" required>
 
-          <label for="email">Email</label>
+          <label for="email" data-en="Email" data-es="Correo electrónico">Email</label>
           <input id="email" maxlength="80" name="email" type="email" required>
 
-          <label for="phone">Phone</label>
+          <label for="phone" data-en="Phone" data-es="Teléfono">Phone</label>
           <input id="phone" maxlength="40" name="phone" type="tel" required>
 
-          <label for="company">Company</label>
+          <label for="company" data-en="Company" data-es="Empresa">Company</label>
           <input id="company" maxlength="40" name="company" type="text" required>
 
-          <label for="00NTR000004J2YT">¿Cómo nos conociste?</label>
+          <label for="00NTR000004J2YT" data-en="How did you hear about us?" data-es="¿Cómo nos conociste?">¿Cómo nos conociste?</label>
           <select id="00NTR000004J2YT" name="00NTR000004J2YT" title="How did you hear about us" required>
-            <option value="">Select an option</option>
+            <option value="" data-en="Select an option" data-es="Selecciona una opción">Select an option</option>
             <option value="Google Search">Google Search</option>
-            <option value="Word of Mouth">Word of Mouth</option>
-            <option value="Other">Other</option>
+            <option value="Word of Mouth" data-en="Word of Mouth" data-es="Recomendación">Word of Mouth</option>
+            <option value="Other" data-en="Other" data-es="Otro">Other</option>
           </select>
 
-          <label for="00NTR000004hXb7">Contanos sobre tu negocio</label>
+          <label for="00NTR000004hXb7" data-en="Tell us about your business" data-es="Cuéntanos sobre tu negocio">Contanos sobre tu negocio</label>
           <textarea id="00NTR000004hXb7" name="00NTR000004hXb7" rows="3" wrap="soft" required></textarea>
 
-          <button type="button" id="sskSubmitBtn">ENVIAR →</button>
-          <p class="form-security-note">
+          <button type="button" id="sskSubmitBtn" data-en="SEND →" data-es="ENVIAR →">ENVIAR →</button>
+          <p class="form-security-note" data-en="🔒 Your information is 100% secure and will never be shared." data-es="🔒 Tu información es 100% segura y nunca será compartida.">
             🔒 Your information is 100% secure and will never be shared.
           </p>
         </form>
@@ -702,6 +733,36 @@ if (!document.querySelector('script[src*="calendly"]')) {
 
 <script>
 (function() {
+  function setLang(lang) {
+    window.__formLang = lang;
+    localStorage.setItem('formLang', lang);
+
+    // textos simples
+    document.querySelectorAll('[data-en][data-es]').forEach(function(el) {
+      if (el.tagName === 'OPTION') {
+        el.textContent = el.getAttribute('data-' + lang);
+      } else if (el.tagName === 'BUTTON' && el.id === 'sskSubmitBtn') {
+        el.textContent = el.getAttribute('data-' + lang);
+      } else if (el.children.length === 0 || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'LABEL') {
+        el.textContent = el.getAttribute('data-' + lang);
+      }
+    });
+
+    // botones activos
+    document.getElementById('lang-btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-btn-es').classList.toggle('active', lang === 'es');
+  }
+
+  window.setLang = setLang;
+
+  // init
+  var saved = localStorage.getItem('formLang') || 'en';
+  setLang(saved);
+})();
+</script>
+
+<script>
+(function() {
   function initSskCalendly() {
     var form = document.getElementById("sskForm");
     var btn = document.getElementById("sskSubmitBtn");
@@ -734,7 +795,8 @@ if (!document.querySelector('script[src*="calendly"]')) {
       var prepNotes = (form.querySelector('[name="00NTR000004hXb7"]') || {}).value || "";
 
       var fullName = (first_name + " " + last_name).trim();
-      var leadDate = new Date().toLocaleDateString("es-AR", { year: "numeric", month: "long", day: "numeric" });
+      var isEs = window.__formLang === 'es';
+      var leadDate = new Date().toLocaleDateString(isEs ? "es-AR" : "en-US", { year: "numeric", month: "long", day: "numeric" });
 
       var leadHTML = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lead — ' + fullName + '</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"><style>'
         + '*{box-sizing:border-box;margin:0;padding:0}'
@@ -782,22 +844,22 @@ if (!document.querySelector('script[src*="calendly"]')) {
         + '</div>'
         + '<div class="lead-body">'
         + '  <div class="lead-section">'
-        + '    <div class="lead-section-title">Información de contacto</div>'
+        + '    <div class="lead-section-title">' + (isEs ? 'Información de contacto' : 'Contact Information') + '</div>'
         + '    <div class="lead-grid">'
         + '      <div class="lead-field"><label>Email</label><span>' + email + '</span></div>'
-        + '      <div class="lead-field"><label>Teléfono</label><span>' + (phone || '—') + '</span></div>'
-        + '      <div class="lead-field"><label>Empresa</label><span>' + (company || '—') + '</span></div>'
-        + '      <div class="lead-field"><label>Cargo</label><span>' + (title || '—') + '</span></div>'
-        + '      <div class="lead-field"><label>¿Cómo nos conoció?</label><span>' + (howHeard || '—') + '</span></div>'
+        + '      <div class="lead-field"><label>' + (isEs ? 'Teléfono' : 'Phone') + '</label><span>' + (phone || '—') + '</span></div>'
+        + '      <div class="lead-field"><label>' + (isEs ? 'Empresa' : 'Company') + '</label><span>' + (company || '—') + '</span></div>'
+        + '      <div class="lead-field"><label>' + (isEs ? 'Cargo' : 'Title') + '</label><span>' + (title || '—') + '</span></div>'
+        + '      <div class="lead-field"><label>' + (isEs ? '¿Cómo nos conoció?' : 'How did you hear about us?') + '</label><span>' + (howHeard || '—') + '</span></div>'
         + '    </div>'
         + '  </div>'
         + '  <div class="lead-section">'
-        + '    <div class="lead-section-title">Notas de preparación</div>'
+        + '    <div class="lead-section-title">' + (isEs ? 'Notas de preparación' : 'Preparation Notes') + '</div>'
         + '    <div class="lead-notes">' + (prepNotes || '—') + '</div>'
         + '  </div>'
         + '  <div class="lead-footer">'
-        + '    <span class="lead-footer-date">Creado el ' + leadDate + '</span>'
-        + '    <button class="btn-download" onclick="window.print()">⬇ Descargar PDF</button>'
+        + '    <span class="lead-footer-date">' + (isEs ? 'Creado el ' : 'Created on ') + leadDate + '</span>'
+        + '    <button class="btn-download" onclick="window.print()">' + (isEs ? '⬇ Descargar PDF' : '⬇ Download PDF') + '</button>'
         + '  </div>'
         + '</div>'
         + '</div>'
